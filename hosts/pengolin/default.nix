@@ -4,6 +4,7 @@
         ../../home/common/default.nix
         ../../home/dev/default.nix
         ../../home/linux/default.nix
+        ../../home/pentest/default.nix
         ./hardware-configuration.nix
     ];
 

@@ -6,14 +6,19 @@
         {
             home = {
                 packages = with pkgs; [
+                    bitwarden-cli
                     oh-my-zsh
-                    tailscale
                     vim
-                    wireguard-go
                 ];
             };
 
         };
         useGlobalPkgs = true;
     };
+
+    environment.systemPackages = with pkgs; [
+        openvpn
+        tailscale
+        wireguard-go
+    ];
 }

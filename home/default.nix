@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  home-manager.backupFileExtension = "backup";
+
   # Enable networking
   networking.networkmanager.enable = true;
 
