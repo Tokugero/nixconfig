@@ -17,6 +17,10 @@
       efi.canTouchEfiVariables = true;
     };
 
+    boot.kernel = {
+      sysctl."net.core.wmem_max" = 8388608;
+    };
+
     services.logind.extraConfig = ''
         # don’t shutdown when power button is short-pressed
         HandlePowerKey=ignore
