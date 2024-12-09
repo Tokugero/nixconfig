@@ -17,6 +17,18 @@
       efi.canTouchEfiVariables = true;
     };
 
+    services.logind.extraConfig = ''
+        # don’t shutdown when power button is short-pressed
+        HandlePowerKey=ignore
+        HandleSuspendKey=ignore
+        HandleHibernateKey=ignore
+      '';
+
+    systemd.targets.sleep.enable = false;
+    systemd.targets.suspend.enable = false;
+    systemd.targets.hibernate.enable = false;
+    systemd.targets.hybrid-sleep.enable = false;
+    
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     system.stateVersion = "24.11";
