@@ -6,7 +6,7 @@
 
     programs = {
         home-manager.enable = true;
-        zsh.enable = true;
+
         git = {
             enable = true;
             userName = "Philip Almueti";

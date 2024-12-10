@@ -13,10 +13,11 @@
                     remmina
                 ];
             };
-
+            programs.plasma = import ./plasma.nix;
         };
         useGlobalPkgs = true;
     };
+
     environment.systemPackages = with pkgs; [
         wireguard-go
         openconnect

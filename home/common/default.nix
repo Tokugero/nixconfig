@@ -4,10 +4,10 @@
     home-manager = {
         users.tokugero = { pkgs, ... }:
         {
+            
             home = {
                 packages = with pkgs; [
                     bitwarden-cli
-                    oh-my-zsh
                     vim
                 ];
             };
@@ -17,6 +17,9 @@
     };
 
     environment.systemPackages = with pkgs; [
+        jq
+        yq
+        xsel
         openvpn
         tailscale
         wireguard-go

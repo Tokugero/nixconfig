@@ -1,6 +1,6 @@
 { pkgs, ... }: {
     imports = [
-	../../home/default.nix
+	      ../../home/default.nix
         ../../home/common/default.nix
         ../../home/dev/default.nix
         ../../home/linux/default.nix
@@ -11,6 +11,10 @@
     networking.hostName = "pengolin";
     networking.interfaces.enp2s0.useDHCP = true;
     networking.interfaces.wlo1.useDHCP = true;
+
+    networking.hosts = {
+      #"10.10.120.90" = [ "frostypines.thm" ];
+    };
 
     boot.loader = {
       systemd-boot.enable = true;
