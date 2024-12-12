@@ -86,6 +86,7 @@
       # $ darwin-rebuild build --flake .#simple
       darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
         modules = [
+          "." # Other nix files
           configuration
           nix-homebrew.darwinModules.nix-homebrew
           {

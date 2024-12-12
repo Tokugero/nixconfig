@@ -2,6 +2,7 @@
   description = "NixOS Configurations for Toku";
 
   inputs = {
+    macos.url = "path:./home/macos";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
