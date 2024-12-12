@@ -66,6 +66,29 @@
             }
           ];
         };
-    };
+      };
+      test = let
+        username = "tokugero";
+        specialArgs = {inherit username;};
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "aarch64-linux";
+
+          modules = [
+            ./hosts/kbp
+            ./users/${username}/default.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+              home-manager.users.${username} = import ./users/${username}/home.nix;
+
+              home-manager.extraSpecialArgs = inputs // specialArgs;
+            }
+          ];
+        };
   };
 }
