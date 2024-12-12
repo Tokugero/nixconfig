@@ -2,12 +2,16 @@
 
 {
     home-manager = {
+        backupFileExtension = "backup";
         users.tokugero = { pkgs, ... }:
         {
             
             home = {
                 packages = with pkgs; [
-                    bitwarden-cli
+                    # bitwarden-cli
+                    # TODO: refactor
+                    google-chrome
+                    brave
                     vim
                 ];
             };

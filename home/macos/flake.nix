@@ -2,9 +2,13 @@
   description = "Darwin system flake";
 
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Optional: Declarative tap management
     homebrew-core = {
@@ -17,8 +21,17 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, ... }:
+  outputs = inputs @ { 
+    self, 
+    nix-darwin, 
+    nixpkgs, 
+    nix-homebrew, 
+    home-manager,
+    ... }:
     let
+      nixpkgsConfig = {
+        config.allowUnfree = true;
+      };
       configuration = { pkgs, config, ... }: {
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
@@ -27,7 +40,17 @@
             pkgs.gimp
             pkgs.inkscape
             pkgs.iterm2
+            pkgs.mkalias
+            pkgs.raycast
           ];
+
+        services.nix-daemon.enable = true;
+
+        nix.extraOptions = ''
+          experimental-features = nix-command flakes
+          auto-optimise-store = true
+          extra-platforms = aarch64-darwin x86_64-darwin
+          '';
 
         homebrew = {
           enable = true;
@@ -37,7 +60,7 @@
           ];
           casks = [
             "firefox"
-            "visual-studio-code"
+            #"visual-studio-code"
           ];
           masApps = {
             #Example: "xcode" = 497799835;
@@ -60,7 +83,7 @@
             rm -rf /Applications/Nix\ Apps
             mkdir -p /Applications/Nix\ Apps
             find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-            while read src; do
+            while read -r src; do
               app_name=$(basename "$src")
               echo "copying $src" >&2
               ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
@@ -86,27 +109,33 @@
       # $ darwin-rebuild build --flake .#simple
       darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
         modules = [
-          "." # Other nix files
+          ../common
+          ../dev
           configuration
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
               # Install Homebrew under the default prefix
               enable = true;
-
               # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
               enableRosetta = true;
-
               # User owning the Homebrew prefix
               user = "tokugero";
-
               # Automatically migrate existing Homebrew installations
               autoMigrate = true;
             };
           }
+          ../../users/tokugero/default.nix
+          home-manager.darwinModules.home-manager
+          {
+            nixpkgs = nixpkgsConfig;
+
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.tokugero = import ../../users/tokugero/home.nix;
+          }
+
         ];
-
-
       };
       # Expose the package set, including overlays, for convenience.
       darwinPackages = self.darwinConfigurations."mbp".pkgs;
