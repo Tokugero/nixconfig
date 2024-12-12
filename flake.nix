@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
@@ -31,6 +31,7 @@
           modules = [
             ./hosts/pengolin
             ./users/${username}/default.nix
+            ./home/x86/default.nix
 
             home-manager.nixosModules.home-manager
             {
@@ -54,6 +55,7 @@
           modules = [
             ./hosts/test
             ./users/${username}/default.nix
+            ./home/x86/default.nix
 
             home-manager.nixosModules.home-manager
             {
@@ -66,19 +68,17 @@
             }
           ];
         };
-      };
-      test = let
+      kbp = let
         username = "tokugero";
-        specialArgs = {inherit username;};
+        unstable = import nixpkgs;
+        specialArgs = {inherit username; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "aarch64-linux";
-
           modules = [
             ./hosts/kbp
             ./users/${username}/default.nix
-
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -90,5 +90,6 @@
             }
           ];
         };
+    };
   };
 }

@@ -1,13 +1,13 @@
 { pkgs, ... }: {
     imports = [
-	      ../../home/default.nix
+	../../home/default.nix
         ../../home/common/default.nix
         ../../home/dev/default.nix
         ../../home/linux/default.nix
         ../../home/pentest/default.nix
         ./hardware-configuration.nix
     ];
-
+    nixpkgs.config.allowUnsupportedSystem = true;
     networking.hostName = "kbp";
     networking.interfaces.ens160.useDHCP = true;
 

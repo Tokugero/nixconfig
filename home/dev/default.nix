@@ -1,6 +1,8 @@
 { pkgs, ...}:
 
 {
+    nixpkgs.config.allowUnfree = true;
+
     home-manager = {
         users.tokugero = { pkgs, ... }: 
             {
