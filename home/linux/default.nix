@@ -6,7 +6,6 @@
         {
             home = {
                 packages = with pkgs; [
-                    discord
                     google-chrome
                     remmina
                 ];
