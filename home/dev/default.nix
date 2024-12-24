@@ -49,17 +49,13 @@
                     };
                 };
             };
-        useGlobalPkgs = true;
     };
 
-    programs.nix-ld.enable = true;
+    #
 
     environment.systemPackages = with pkgs; [
         python312
     ];
 
-    virtualisation.docker = {
-        enable = true;
-        enableOnBoot = true;
-    };
+
 }

@@ -2,14 +2,24 @@
   description = "NixOS Configurations for Toku";
 
   inputs = {
-    macos.url = "path:./home/macos";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
+    };
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
     };
   };
 
@@ -18,8 +28,41 @@
     nixpkgs,
     home-manager,
     plasma-manager,
+    nix-darwin,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
     ...
   }: {
+    darwinConfigurations = {
+      mbp = let
+        username = "tokugero";
+        specialArgs = {inherit username;};
+      in
+        nix-darwin.lib.darwinSystem {
+          inherit specialArgs;
+          system = "aarch64-darwin";
+
+          modules = [
+            { nix.extraOptions = ''extra-platforms = x86_64-darwin aarch64-darwin ''; }
+            ./hosts/mbp
+            ./home/macos/default.nix
+            home-manager.darwinModules.home-manager
+            {
+              users.users.${username}.home = "/Users/${username}";
+            }
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${username} = import ./users/${username}/home.nix;
+                
+                extraSpecialArgs = inputs // specialArgs;
+              };
+            }
+          ];
+        };
+    };
     nixosConfigurations = {
       pengolin = let
         username = "tokugero";
@@ -31,7 +74,6 @@
 
           modules = [
             ./hosts/pengolin
-            ./users/${username}/default.nix
             ./home/x86/default.nix
 
             home-manager.nixosModules.home-manager
@@ -55,7 +97,6 @@
 
           modules = [
             ./hosts/test
-            ./users/${username}/default.nix
             ./home/x86/default.nix
 
             home-manager.nixosModules.home-manager
@@ -79,7 +120,6 @@
           system = "aarch64-linux";
           modules = [
             ./hosts/kbp
-            ./users/${username}/default.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

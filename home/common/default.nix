@@ -3,17 +3,14 @@
 {
     home-manager = {
         users.tokugero = { pkgs, ... }:
-        {
-            
+        {  
             home = {
                 packages = with pkgs; [
                     bitwarden-cli
                     vim
                 ];
             };
-
         };
-        useGlobalPkgs = true;
     };
 
     environment.systemPackages = with pkgs; [

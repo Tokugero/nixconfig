@@ -26,4 +26,11 @@
         parted
         openconnect
     ];
+
+    programs.nix-ld.enable = true;
+    
+    virtualisation.docker = {
+        enable = true;
+        enableOnBoot = true;
+    };
 }
