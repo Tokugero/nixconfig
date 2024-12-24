@@ -79,6 +79,7 @@
           modules = [
             ./hosts/pengolin
             ./home/x86/default.nix
+            ./users/${username}/linux.nix
 
             home-manager.nixosModules.home-manager
             {
@@ -102,6 +103,7 @@
           modules = [
             ./hosts/test
             ./home/x86/default.nix
+            ./users/${username}/linux.nix
 
             home-manager.nixosModules.home-manager
             {
