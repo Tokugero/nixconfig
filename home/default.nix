@@ -3,6 +3,8 @@
 {
   home-manager.backupFileExtension = "backup";
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
   # Enable networking
   networking.networkmanager.enable = true;
 
