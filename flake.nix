@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager = {
@@ -34,6 +35,7 @@
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
+    unstable,
     ...
   }: {
     darwinConfigurations = {
@@ -114,14 +116,15 @@
         };
       kbp = let
         username = "tokugero";
-        unstable = import nixpkgs;
         specialArgs = {inherit username; };
       in
-        nixpkgs.lib.nixosSystem {
+        unstable.lib.nixosSystem {
           inherit specialArgs;
           system = "aarch64-linux";
           modules = [
             ./hosts/kbp
+            ./users/${username}/linux.nix
+            
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
