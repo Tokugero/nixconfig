@@ -21,6 +21,8 @@
     services.udisks2.enable = true;
 
     environment.systemPackages = with pkgs; [
+        firefox
+        brave
         wireguard-go
         ntfs3g
         parted

@@ -17,6 +17,7 @@
       "mas"
     ];
     casks = [
+      "brave-browser"
       "firefox"
       "visual-studio-code"
       "discord"

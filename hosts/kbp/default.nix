@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, unstable, ... }: {
     imports = [
-	../../home/default.nix
+	      ../../home/default.nix
         ../../home/common/default.nix
         ../../home/dev/default.nix
         ../../home/linux/default.nix
