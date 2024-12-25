@@ -64,6 +64,7 @@ in
     };
 
     environment.systemPackages = with pkgs; [
+        powerline-fonts
         jq
         yq
         xsel
