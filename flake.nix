@@ -48,7 +48,6 @@
           system = "aarch64-darwin";
 
           modules = [
-            { nix.extraOptions = ''extra-platforms = x86_64-darwin aarch64-darwin ''; }
             ./hosts/mbp
             ./home/macos/default.nix
             home-manager.darwinModules.home-manager

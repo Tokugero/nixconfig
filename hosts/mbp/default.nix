@@ -5,4 +5,9 @@
     ];
 
     security.pam.enableSudoTouchIdAuth = true;
+
+    nix.extraOptions = ''
+        experimental-features = nix-command flakes
+    '';
+    nix.linux-builder.enable = true;
 }

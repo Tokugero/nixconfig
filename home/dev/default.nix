@@ -34,6 +34,7 @@
                             github.copilot-chat
                             golang.go
                             hashicorp.terraform
+                            ms-vscode-remote.remote-containers
                             ms-azuretools.vscode-docker
                             ms-python.python
                             ms-vscode-remote.remote-ssh
