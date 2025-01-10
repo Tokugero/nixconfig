@@ -24,6 +24,7 @@
     ];
     masApps = {
       #Example: "xcode" = 497799835;
+      "windows app" = 1295203466;
     };
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;

@@ -71,5 +71,7 @@ in
         openvpn
         tailscale
         wireguard-go
+        vault
+        openconnect
     ];
 }
