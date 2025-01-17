@@ -38,7 +38,7 @@
     };
     configFile = {
         kwinrc.Desktops.Number = {
-            value = 2;
+            value = 4;
         };
     };
 }

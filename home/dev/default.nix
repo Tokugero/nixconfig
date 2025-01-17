@@ -29,6 +29,7 @@
                             ms-vscode.powershell
                             dracula-theme.theme-dracula
                             eamodio.gitlens
+                            ms-toolsai.datawrangler
                             esbenp.prettier-vscode
                             github.copilot
                             github.copilot-chat
@@ -38,6 +39,7 @@
                             ms-azuretools.vscode-docker
                             ms-python.python
                             ms-vscode-remote.remote-ssh
+                            ms-toolsai.jupyter
                             redhat.ansible
                             redhat.vscode-yaml
                             yzhang.markdown-all-in-one
@@ -55,7 +57,12 @@
     #
 
     environment.systemPackages = with pkgs; [
+        libgcc
         python312
+        python312Packages.ipykernel
+        python312Packages.jupyter
+        python312Packages.jupyter-core
+        python312Packages.pip
     ];
 
 

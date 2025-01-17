@@ -3,7 +3,8 @@ let
   unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "05n42xbmfwlx6msv1j4jjnhnnmi8a03in9cr8gsmc1x01qxkn9ql";
+    #sha256 = "05n42xbmfwlx6msv1j4jjnhnnmi8a03in9cr8gsmc1x01qxkn9ql";
+    sha256 = "0ync3h68cfsbp9nn8x736dhlb2jp2m2ycqdww3xzffi0m41ay8im";
     }) {};
 in
 {
@@ -70,6 +71,7 @@ in
         xsel
         openvpn
         tailscale
+        libreoffice-qt6-fresh
         wireguard-go
         vault
         openconnect
