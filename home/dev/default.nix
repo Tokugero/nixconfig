@@ -35,6 +35,8 @@
                             golang.go
                             hashicorp.terraform
                             ms-azuretools.vscode-docker
+                            alexcvzz.vscode-sqlite
+                            ms-vscode.cpptools-extension-pack
                             ms-python.python
                             ms-toolsai.datawrangler
                             ms-toolsai.jupyter

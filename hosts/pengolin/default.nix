@@ -25,11 +25,20 @@
       sysctl."net.core.wmem_max" = 8388608;
     };
 
+    services.logind.lidSwitch = "ignore";
+    
     services.logind.extraConfig = ''
-        # don’t shutdown when power button is short-pressed
         HandlePowerKey=ignore
         HandleSuspendKey=ignore
         HandleHibernateKey=ignore
+        HandleLidSwitch=ignore
+      '';
+
+    systemd.sleep.extraConfig = ''
+        AllowSuspend=no
+        AllowHibernation=no
+        AllowHybridSleep=no
+        AllowSuspendThenHibernate=no
       '';
 
     systemd.targets.sleep.enable = false;
