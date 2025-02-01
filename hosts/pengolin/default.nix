@@ -1,6 +1,6 @@
 { pkgs, ... }: {
     imports = [
-	      ../../home/default.nix
+	../../home/default.nix
         ../../home/common/default.nix
         ../../home/dev/default.nix
         ../../home/linux/default.nix
@@ -32,13 +32,7 @@
         HandleSuspendKey=ignore
         HandleHibernateKey=ignore
         HandleLidSwitch=ignore
-      '';
-
-    systemd.sleep.extraConfig = ''
-        AllowSuspend=no
-        AllowHibernation=no
-        AllowHybridSleep=no
-        AllowSuspendThenHibernate=no
+	IdleAction=ignore
       '';
 
     systemd.targets.sleep.enable = false;

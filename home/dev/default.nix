@@ -45,11 +45,15 @@
                             redhat.ansible
                             redhat.vscode-yaml
                             yzhang.markdown-all-in-one
+                            devsense.phptools-vscode
                         ]);
 
                         userSettings = {
                             "telemetry.telemetryLevel" = "off";
                             "workbench.sideBar.location" = "right";
+                            "terminal.integrated.shellIntegration.history" = 10000;
+                            "terminal.integrated.scrollback" = 100000;
+                            "update.mode" = "none";
                         };
                     };
                 };

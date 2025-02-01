@@ -70,6 +70,7 @@ in
         yq
         xsel
         openvpn
+        wget
         tailscale
         libreoffice-qt6-fresh
         wireguard-go

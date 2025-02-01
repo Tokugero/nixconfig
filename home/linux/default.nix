@@ -32,6 +32,7 @@
         ntfs3g
         parted
         openconnect
+        kdePackages.oxygen
     ];
 
     programs.nix-ld.enable = true;

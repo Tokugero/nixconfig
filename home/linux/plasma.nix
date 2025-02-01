@@ -7,7 +7,7 @@
         lookAndFeel = "org.kde.breezedark.desktop";
         clickItemTo = "select";
         cursor = {
-            theme = "Breeze";
+            theme = "breeze";
             size = 32;
         };
     };
