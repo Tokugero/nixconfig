@@ -8,9 +8,10 @@
                 packages = with pkgs; [
                     #discord
                     remmina
+                    kdePackages.krdc
                 ];
             };
-            programs.plasma = import ./plasma.nix;
+            #programs.plasma = import ./plasma.nix;
         };
         useGlobalPkgs = true;
     };

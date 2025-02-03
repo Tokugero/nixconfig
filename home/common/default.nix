@@ -71,6 +71,7 @@ in
         xsel
         openvpn
         wget
+        ghostty
         wget2
         tailscale
         libreoffice-qt6-fresh
