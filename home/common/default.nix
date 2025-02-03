@@ -3,8 +3,7 @@ let
   unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    #sha256 = "05n42xbmfwlx6msv1j4jjnhnnmi8a03in9cr8gsmc1x01qxkn9ql";
-    sha256 = "0ync3h68cfsbp9nn8x736dhlb2jp2m2ycqdww3xzffi0m41ay8im";
+    sha256 = "0mbjsaras0x4c999znc79c29d48i36qs28gym9b3hb8m8db9vv8h";
     }) {};
 in
 {
@@ -30,6 +29,7 @@ in
                             containerise
                             kagi-search
                             darkreader
+                            cookie-quick-manager
                             privacy-badger
                             tree-style-tab
                             ublock-origin
@@ -71,6 +71,7 @@ in
         xsel
         openvpn
         wget
+        wget2
         tailscale
         libreoffice-qt6-fresh
         wireguard-go

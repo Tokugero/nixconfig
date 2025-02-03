@@ -18,15 +18,18 @@
                         nixpkgs-fmt
                         tenv
                         powershell
+                        sqlite
                     ];
                 };
                 programs = {
                     vscode = {
                         enable = true;
                         package = pkgs.vscode.fhs;
+                        mutableExtensionsDir = false;
 
                         extensions = (with pkgs.vscode-extensions; [
                             bbenoist.nix
+                            devsense.phptools-vscode
                             dracula-theme.theme-dracula
                             eamodio.gitlens
                             esbenp.prettier-vscode
@@ -45,7 +48,6 @@
                             redhat.ansible
                             redhat.vscode-yaml
                             yzhang.markdown-all-in-one
-                            devsense.phptools-vscode
                         ]);
 
                         userSettings = {
