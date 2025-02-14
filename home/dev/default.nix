@@ -5,26 +5,24 @@
 
     home-manager = {
         users.tokugero = { pkgs, ... }: 
-            {
-                home = {
-                    packages = with pkgs; [
-                        alejandra
-                        awscli2
-                        k9s
-                        kubectl
-                        chruby
-                        nil
-                        nixfmt-rfc-style
-                        nixpkgs-fmt
-                        tenv
-                        powershell
-                        sqlite
-                    ];
-                };
-                programs = {
-                    vscode = import ./vscode.nix;
-                };
+        {
+            home = {
+                packages = with pkgs; [
+                    alejandra
+                    awscli2
+                    k9s
+                    kubectl
+                    chruby
+                    nil
+                    nixfmt-rfc-style
+                    nixpkgs-fmt
+                    tenv
+                    powershell
+                    sqlite
+                ];
             };
+            programs.vscode = import ./vscode.nix { inherit pkgs; };
+        };
     };
 
     #
