@@ -65,18 +65,25 @@ in
     };
 
     environment.systemPackages = with pkgs; [
-        powerline-fonts
-        jq
-        yq
-        xsel
-        openvpn
-        wget
+        cabextract
         ghostty
-        wget2
-        tailscale
+        gzip
+        jq
         libreoffice-qt6-fresh
-        wireguard-go
-        vault
         openconnect
+        openvpn
+        p7zip
+        powerline-fonts
+        sshpass
+        tailscale
+        unrar-wrapper
+        unzip
+        vault
+        wget
+        wget2
+        wireguard-go
+        xsel
+        xz
+        yq
     ];
 }

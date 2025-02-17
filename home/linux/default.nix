@@ -8,10 +8,9 @@
                 packages = with pkgs; [
                     #discord
                     remmina
-                    kdePackages.krdc
+                    python312Packages.pygments
                 ];
             };
-            #programs.plasma = import ./plasma.nix;
         };
         useGlobalPkgs = true;
     };
@@ -33,7 +32,6 @@
         ntfs3g
         parted
         openconnect
-        kdePackages.oxygen
     ];
 
     programs.nix-ld.enable = true;
