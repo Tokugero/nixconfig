@@ -29,6 +29,7 @@
 
     environment = {
         systemPackages = with pkgs; [
+            gcc
             python312
             python312Packages.pip
         ];
