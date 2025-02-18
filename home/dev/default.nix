@@ -14,6 +14,7 @@
                     kubectl
                     chruby
                     nil
+                    ngrok
                     nixfmt-rfc-style
                     nixpkgs-fmt
                     tenv
