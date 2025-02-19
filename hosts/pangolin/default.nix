@@ -8,7 +8,7 @@
         ./hardware-configuration.nix
     ];
 
-    networking.hostName = "pengolin";
+    networking.hostName = "pangolin";
     networking.interfaces.enp2s0.useDHCP = true;
     networking.interfaces.wlo1.useDHCP = true;
 
@@ -32,7 +32,7 @@
         HandleSuspendKey=ignore
         HandleHibernateKey=ignore
         HandleLidSwitch=ignore
-	IdleAction=ignore
+	      IdleAction=ignore
       '';
 
     systemd.targets.sleep.enable = false;

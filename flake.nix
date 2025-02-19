@@ -67,7 +67,7 @@
         };
     };
     nixosConfigurations = {
-      pengolin = let
+      pangolin = let
         username = "tokugero";
         specialArgs = {inherit username;};
       in
@@ -76,7 +76,7 @@
           system = "x86_64-linux";
 
           modules = [
-            ./hosts/pengolin
+            ./hosts/pangolin
             ./home/x86/default.nix
             ./users/${username}/linux.nix
 

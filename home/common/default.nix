@@ -3,7 +3,7 @@ let
   unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "0mbjsaras0x4c999znc79c29d48i36qs28gym9b3hb8m8db9vv8h";
+    sha256 = "045fx6dr2c30p3k8xdn4ck81kgrfxk2wwcsxpr9ziv17ih0g3pc4";
     }) {};
 in
 {
@@ -86,4 +86,5 @@ in
         xz
         yq
     ];
+
 }
