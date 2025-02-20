@@ -52,7 +52,13 @@
         nixupdate() {
             OLDDIR=$(pwd);
             cd ~/.nix;
-            sudo nixos-rebuild switch --impure --upgrade --flake .#$1
+            # If $1 is not set, then use hostname
+            if [ -z "$1" ]; then
+                echo "No hostname provided, using $(hostname)";
+                sudo nixos-rebuild switch --impure --upgrade --flake .#$(hostname);
+            else
+                sudo nixos-rebuild switch --impure --upgrade --flake .#$1
+            fi
             cd $OLDDIR;
         };
     '';

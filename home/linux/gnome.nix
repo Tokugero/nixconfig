@@ -20,6 +20,7 @@ in
                     gnomeExtensions.blur-my-shell
                     gnomeExtensions.tiling-shell
                     gnomeExtensions.bing-wallpaper-changer
+                    gnomeExtensions.gtile
                 ];
             };
             dconf = {
@@ -32,6 +33,7 @@ in
                             tiling-shell.extensionUuid
                             system-monitor.extensionUuid
                             bing-wallpaper-changer.extensionUuid
+                            gtile.extensionUuid
                             ];
                         };
 
@@ -43,7 +45,14 @@ in
                         };
                     "org/gnome/shell/extensions/bingwallpaper" = {
                         random-mode-include-only-uhd = true;
-                    };
+                        };    
+                    "org/gnome/shell/extensions/gtile" = {
+                        auto-close = true;
+                        follow-cursor = false;
+                        global-auto-tiling = false;
+                        show-grid-lines = true;
+                        show-icon = false;
+                        };
                 };
             };
         };
