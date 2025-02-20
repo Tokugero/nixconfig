@@ -1,13 +1,18 @@
 { pkgs, config, ...}:
 {
+  programs.zsh.shellAliases = {
+    # Example:
+    # ll = "ls -l";
+    docker = "lima nerdctl";
+  };
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-    [
-      pkgs.gimp
-      pkgs.inkscape
-      pkgs.iterm2
-      pkgs.raycast
+  environment.systemPackages = with pkgs; [
+      gimp
+      inkscape
+      iterm2
+      lima
+      raycast
     ];
 
   homebrew = {
@@ -20,9 +25,13 @@
     casks = [
       "brave-browser"
       "firefox"
+      "ghostty"
       "visual-studio-code"
       "discord"
     ];
+    taps = {
+      "deskflow/homebrew-tap" = inputs.deskflow; # Need to test this
+    };
     masApps = {
       #Example: "xcode" = 497799835;
       "windows app" = 1295203466;

@@ -5,9 +5,11 @@
         users.tokugero = { pkgs, ... }: 
         {
             home = {
+                enableNixpkgsReleaseCheck = false;
                 packages = with pkgs; [
                     obs-studio
                     #synergy
+                    bambu-studio
                     deskflow
                     libei
                 ];
