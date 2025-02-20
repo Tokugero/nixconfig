@@ -108,7 +108,7 @@
         username = "tokugero";
         specialArgs = {inherit username;};
       in
-        nixpkgs.lib.nixosSystem {
+        unstable.lib.nixosSystem {
           inherit specialArgs;
           system = "x86_64-linux";
 

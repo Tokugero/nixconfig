@@ -15,6 +15,7 @@
     brews = [
       "aws-iam-authenticator"
       "mas"
+      "deskflow"
     ];
     casks = [
       "brave-browser"
