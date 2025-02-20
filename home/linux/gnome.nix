@@ -2,8 +2,7 @@
 let
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "0s46c0zqxkflqz43dll40a64i0zqca66r19n7il55xkp7ir56sy3";
-    }) {};
+    }) { inherit pkgs; };
 in
 {
     home-manager = {
