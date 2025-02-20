@@ -24,6 +24,7 @@
 
     nixpkgs.config.permittedInsecurePackages = [
         "deskflow-1.18.0"
+        "deskflow-1.19.0"
     ];
 
     programs = {
