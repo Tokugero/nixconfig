@@ -6,7 +6,7 @@
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
@@ -39,7 +39,6 @@
         nix-darwin.lib.darwinSystem {
           inherit specialArgs;
           system = "aarch64-darwin";
-
           modules = [
             ./hosts/mbp
             ./home/macos/default.nix

@@ -13,6 +13,8 @@
             home = {
                 packages = with pkgs; [
                     #discord
+                    bitwarden-cli
+                    libreoffice-qt6-fresh
                     remmina
                     python312Packages.pygments
                 ];
@@ -33,6 +35,7 @@
 
     environment.systemPackages = with pkgs; [
         brave
+        ghostty
         wireguard-go
         ntfs3g
         parted

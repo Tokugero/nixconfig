@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, config, ...}:
 
 {
     nixpkgs.config.allowUnfree = true;
@@ -23,7 +23,7 @@
                     talosctl
                 ];
             };
-            programs.vscode = import ./vscode.nix { inherit pkgs; };
+            programs.vscode = import ./vscode.nix { inherit pkgs config; };
         };
     };
 

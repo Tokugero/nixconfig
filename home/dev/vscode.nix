@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
-    enable = true;
+
+    enable = config.nixpkgs.hostPlatform.config != "aarch64-apple-darwin";
     package = pkgs.vscode.fhs;
     mutableExtensionsDir = false;
 

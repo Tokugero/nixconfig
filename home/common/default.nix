@@ -9,7 +9,6 @@
             };
             home = {
                 packages = with pkgs; [
-                    bitwarden-cli
                     vim
                 ];
             };
@@ -18,10 +17,8 @@
 
     environment.systemPackages = with pkgs; [
         cabextract
-        ghostty
         gzip
         jq
-        libreoffice-qt6-fresh
         openconnect
         openvpn
         p7zip

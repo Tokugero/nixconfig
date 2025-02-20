@@ -3,8 +3,7 @@ let
   unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "0s46c0zqxkflqz43dll40a64i0zqca66r19n7il55xkp7ir56sy3";
-    }) {};
+    }) { inherit pkgs; };
 in
 {
     package = null; # This is installed system independent since darwin + linux packages are different
