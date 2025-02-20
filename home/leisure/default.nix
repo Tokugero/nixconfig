@@ -19,6 +19,7 @@
 
     programs = {
         steam.enable = true;
+        steam.protontricks.enable = true;
     };
 
     programs.zsh.interactiveShellInit = ''

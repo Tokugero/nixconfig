@@ -1,6 +1,12 @@
 { pkgs, ...}:
 
 {
+    # import ./gnome.nix
+
+    imports = [
+        ./gnome.nix
+    ];
+    
     home-manager = {
         users.tokugero = { pkgs, ... }: 
         {
@@ -25,8 +31,9 @@
 
     powerManagement.enable = false;
 
+    programs.firefox.enable = true;
+
     environment.systemPackages = with pkgs; [
-        firefox
         brave
         wireguard-go
         ntfs3g
