@@ -1,14 +1,14 @@
 { pkgs, ... }: {
     imports = [
-	    ../../home/default.nix
+        ../../home/default.nix
         ../../home/common/default.nix
         ../../home/dev/default.nix
         ../../home/linux/default.nix
+        ../../home/leisure/default.nix
         ./hardware-configuration.nix
     ];
 
     networking.hostName = "desktop";
-    networking.interfaces.enp2s0.useDHCP = true;
 
     networking.hosts = {
       #"10.10.120.90" = [ "frostypines.thm" ];

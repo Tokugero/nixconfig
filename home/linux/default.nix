@@ -40,4 +40,13 @@
         enable = true;
         enableOnBoot = true;
     };
+
+    programs.zsh.interactiveShellInit = ''
+        nixupdate() {
+            OLDDIR=$(pwd);
+            cd ~/.nix;
+            sudo nixos-rebuild switch --impure --upgrade --flake .#$1
+            cd $OLDDIR;
+        };
+    '';
 }

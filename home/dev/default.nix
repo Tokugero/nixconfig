@@ -20,6 +20,7 @@
                     tenv
                     powershell
                     sqlite
+                    talosctl
                 ];
             };
             programs.vscode = import ./vscode.nix { inherit pkgs; };
