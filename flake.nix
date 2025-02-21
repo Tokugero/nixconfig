@@ -81,28 +81,6 @@
             }
           ];
         };
-      test = let
-        username = "tokugero";
-        specialArgs = {inherit username;};
-      in
-        nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "x86_64-linux";
-
-          modules = [
-            ./hosts/test
-            ./home/x86/default.nix
-            ./users/${username}/linux.nix
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.${username} = import ./users/${username}/home.nix;
-              home-manager.extraSpecialArgs = inputs // specialArgs;
-            }
-          ];
-        };
       desktop = let
         username = "tokugero";
         specialArgs = {inherit username;};

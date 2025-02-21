@@ -1,7 +1,7 @@
 { pkgs, ...}:
 let
-  nur = import (builtins.fetchTarball {
-    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
+  nur = import (builtins.fetchTarball { 
+    url = "https://github.com/nix-community/NUR/archive/master.tar.gz"; 
     }) { inherit pkgs; };
 in
 {
@@ -14,7 +14,7 @@ in
 
             home = {
                 packages = with pkgs; [
-                    dconf2nix # dconf dump / | dconf2nix > dconf.nix
+                    dconf2nix # dconf dump / | dconf2nix
                     gnomeExtensions.system-monitor
                     gnomeExtensions.blur-my-shell
                     gnomeExtensions.tiling-shell
@@ -33,25 +33,25 @@ in
                             system-monitor.extensionUuid
                             bing-wallpaper-changer.extensionUuid
                             gtile.extensionUuid
-                            ];
-                        };
+                        ];
+                    };
 
                     "org/gnome/desktop/wm/preferences" = {
                         "button-layout" = ":minimize,maximize,close";
-                        };
+                    };
                     "org/gnome/desktop/interface" = {
                         color-scheme = "prefer-dark";
-                        };
+                    };
                     "org/gnome/shell/extensions/bingwallpaper" = {
                         random-mode-include-only-uhd = true;
-                        };    
+                    };    
                     "org/gnome/shell/extensions/gtile" = {
                         auto-close = true;
                         follow-cursor = false;
                         global-auto-tiling = false;
                         show-grid-lines = true;
                         show-icon = false;
-                        };
+                    };
                 };
             };
         };
@@ -59,5 +59,4 @@ in
     };
 
     services.gnome.gnome-browser-connector.enable = true;
-
 }
