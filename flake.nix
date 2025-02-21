@@ -130,7 +130,7 @@
         username = "tokugero";
         specialArgs = {inherit username; };
       in
-        unstable.lib.nixosSystem {
+        nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "aarch64-linux";
           modules = [
