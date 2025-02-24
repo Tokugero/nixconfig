@@ -10,6 +10,8 @@
                     obs-studio
                     #synergy
                     bambu-studio
+                    hashcat
+                    wordlists
                     deskflow
                     libei
                 ];
