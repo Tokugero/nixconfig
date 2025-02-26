@@ -15,6 +15,11 @@
         };
     };
 
+    services.mullvad-vpn = {
+        enable = true;
+        package = pkgs.mullvad-vpn;
+    };
+
     environment.systemPackages = with pkgs; [
         cabextract
         gzip
@@ -31,9 +36,9 @@
         wget
         wget2
         wireguard-go
+        wireguard-tools
         xsel
         xz
         yq
     ];
-
 }
