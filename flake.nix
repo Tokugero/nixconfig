@@ -12,6 +12,8 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
@@ -36,11 +38,12 @@
     darwinConfigurations = {
       mbp = let
         username = "tokugero";
-        specialArgs = {inherit username;};
+        system = "aarch64-darwin";
+        specialArgs = {inherit username inputs system;};
       in
         nix-darwin.lib.darwinSystem {
           inherit specialArgs;
-          system = "aarch64-darwin";
+          system = system;
           modules = [
             ./hosts/mbp
             ./home/macos/default.nix
@@ -63,11 +66,12 @@
     nixosConfigurations = {
       pangolin = let
         username = "tokugero";
-        specialArgs = {inherit username;};
+        system = "x86_64-linux";
+        specialArgs = {inherit username inputs system;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
-          system = "x86_64-linux";
+          system = system;
 
           modules = [
             ./hosts/pangolin
@@ -85,11 +89,12 @@
         };
       desktop = let
         username = "tokugero";
-        specialArgs = {inherit username;};
+        system = "x86_64-linux";
+        specialArgs = {inherit username inputs system;};
       in
         unstable.lib.nixosSystem {
           inherit specialArgs;
-          system = "x86_64-linux";
+          system = system;
 
           modules = [
             ./hosts/desktop
@@ -108,11 +113,12 @@
         };
       kbp = let
         username = "tokugero";
-        specialArgs = {inherit username; };
+        system = "aarch64-linux";
+        specialArgs = {inherit username inputs system; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
-          system = "aarch64-linux";
+          system = system;
           modules = [
             ./hosts/kbp
             ./users/${username}/linux.nix

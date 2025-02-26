@@ -1,6 +1,5 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, system, ... }:
 {
-
     enable = config.nixpkgs.hostPlatform.config != "aarch64-apple-darwin";
     package = pkgs.vscode.fhs;
     mutableExtensionsDir = false;
@@ -26,7 +25,9 @@
         redhat.ansible
         redhat.vscode-yaml
         yzhang.markdown-all-in-one
-    ]);
+    ] ++ (with inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace; [ #https://github.com/nix-community/nix-vscode-extensions
+        juanblanco.solidity
+    ]));
 
     userSettings = {
         "telemetry.telemetryLevel" = "off";
