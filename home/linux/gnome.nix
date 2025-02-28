@@ -16,8 +16,8 @@ in
                 packages = with pkgs; [
                     dconf2nix # dconf dump / | dconf2nix
                     gnomeExtensions.system-monitor
-                    gnomeExtensions.blur-my-shell
-                    gnomeExtensions.tiling-shell
+                    #gnomeExtensions.blur-my-shell
+                    #gnomeExtensions.tiling-shell
                     gnomeExtensions.bing-wallpaper-changer
                     gnomeExtensions.gtile
                 ];
@@ -28,8 +28,8 @@ in
                     "org/gnome/shell" = {
                         disable-user-extensions = false;
                         enabled-extensions = with pkgs.gnomeExtensions; [
-                            blur-my-shell.extensionUuid
-                            tiling-shell.extensionUuid
+                            #blur-my-shell.extensionUuid
+                            #tiling-shell.extensionUuid
                             system-monitor.extensionUuid
                             bing-wallpaper-changer.extensionUuid
                             gtile.extensionUuid
@@ -51,6 +51,13 @@ in
                         global-auto-tiling = false;
                         show-grid-lines = true;
                         show-icon = false;
+                    };
+                    "org/gnome/settings-daemon/plugins/power" = {
+                        sleep-inactive-ac-timeout = 7200;
+                    };
+                    "org/gnome/desktop/sound" = {
+                        event-sounds = false;
+                        theme-name = "__custom";
                     };
                 };
             };
