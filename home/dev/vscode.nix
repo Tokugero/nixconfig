@@ -36,5 +36,6 @@
         "terminal.integrated.scrollback" = 100000;
         "update.mode" = "none";
         "terminal.integrated.fontFamily" = "Meslo LG M DZ for Powerline";
+        "github.copilot.enable.markdown" = true;
     };
 }
