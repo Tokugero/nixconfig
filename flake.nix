@@ -106,7 +106,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.${username} = import ./users/${username}/home.nix;
-
               home-manager.extraSpecialArgs = inputs // specialArgs;
             }
           ];
@@ -128,7 +127,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.${username} = import ./users/${username}/home.nix;
-
               home-manager.extraSpecialArgs = inputs // specialArgs;
             }
           ];
