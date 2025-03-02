@@ -22,6 +22,11 @@
         useGlobalPkgs = true;
     };
 
+    services.mullvad-vpn = {
+        enable = true;
+        package = pkgs.mullvad-vpn;
+    };
+
     # Enable ntfs mounting
     services = {
         devmon.enable = true;
