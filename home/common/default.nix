@@ -17,7 +17,6 @@
 
     services.tailscale = {
         enable = true;
-        authKeyFile = "/home/tokugero/.tailscale/tailscale.key";
     };
 
     environment.systemPackages = with pkgs; [

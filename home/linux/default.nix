@@ -26,6 +26,9 @@
         enable = true;
         package = pkgs.mullvad-vpn;
     };
+    
+    # This option isn't in nix-darwin yet
+    services.tailscale.authKeyFile = "/home/tokugero/.tailscale/tailscale.key";
 
     # Enable ntfs mounting
     services = {
