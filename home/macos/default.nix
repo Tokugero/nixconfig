@@ -1,4 +1,7 @@
 { pkgs, config, ...}:
+let
+  username = "tokugero";
+in
 {
   environment.shellAliases = {
     # Example:
@@ -15,16 +18,20 @@
                     syncuniversalsecrets;
                 fi
                 echo "Getting wrccdc password";
-                mkdir -p ~/.credentials && touch ~/.credentials/wrccdc;
+                mkdir -p ~/.credentials && touch ~/.credentials/wrccdc; chown -R ${username}:${username} ~/.credentials && chmod -R 0700 ~/.credentials;
                 bw get item wrccdc_dev_.wrccdc | jq -r .notes | base64 -d > ~/.credentials/wrccdc;
+                echo "Getting age keys";
+                mkdir -p ~/.age && touch ~/.age/public.key && touch ~/.age/private.key; chown -R ${username}:${username} ~/.age && chmod -R 0700 ~/.age
+                bw get item age_dev_public.key | jq -r .notes | base64 -d > ~/.age/public.key;
+                bw get item age_dev_private.key | jq -r .notes | base64 -d > ~/.age/private.key;
                 echo "Getting kubeconfig";
-                mkdir -p ~/.kube && touch ~/.kube/config;
+                mkdir -p ~/.kube && touch ~/.kube/config; chown -R ${username}:${username} ~/.kube && chmod -R 0700 ~/.kube;
                 bw get item kubeconfig_dev_.kubeconfig | jq -r .notes | base64 -d > ~/.kube/config;
                 echo "Getting talosconfig";
-                mkdir -p ~/.talos && touch ~/.talos/config;
+                mkdir -p ~/.talos && touch ~/.talos/config; chown -R ${username}:${username} ~/.talos && chmod -R 0700 ~/.talos;
                 bw get item talosconfig_dev_config | jq -r .notes | base64 -d > ~/.talos/config;
                 echo "Getting aws credentials";
-                mkdir -p ~/.aws && touch ~/.aws/credentials;
+                mkdir -p ~/.aws && touch ~/.aws/credentials; chown -R ${username}:${username} ~/.aws && chmod -R 0700 ~/.aws;
                 bw get item aws_dev_credentials | jq -r .notes | base64 -d > ~/.aws/credentials;
                 echo "Getting ssh keys";
                 results=$(bw list items --folderid $(bw get folder cli | jq -r .id) --search "ssh_dev");
@@ -36,9 +43,9 @@
                     echo $location;
                     touch $location;
                     echo $content > $location;
-                    chmod 0600 $location;
                     echo "Synced "$location;
                 done;
+                chown -R ${username}:${username} ~/.ssh && chmod 0700 ~/.ssh
                 bw lock;
                 unset BW_SESSION;
             };

@@ -1,8 +1,11 @@
 { pkgs, config, ...}:
-
+let 
+    username = "tokugero";
+in
 {
+    
     home-manager = {
-        users.tokugero = { pkgs, unstable, ... }:
+        users.${username} = { pkgs, unstable, ... }:
         {  
             programs = {
                 firefox = import ./firefox.nix { inherit pkgs config; };
@@ -49,7 +52,7 @@
             fi
             echo "Syncing universal secrets";
             echo "Getting tailscale key";
-            mkdir -p ~/.tailscale;
+            mkdir -p ~/.tailscale; chown -R ${username}:${username} ~/.tailscale && chmod -R 0700 ~/.tailscale;
             bw get item tailscale_all_tailscale.key | jq -r .notes | base64 -d > ~/.tailscale/tailscale.key;
         };
     '';

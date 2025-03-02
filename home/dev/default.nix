@@ -9,6 +9,7 @@
             home = {
                 packages = with pkgs; [
                     alejandra
+                    age
                     awscli2
                     k9s
                     kubectl
@@ -20,6 +21,7 @@
                     tenv
                     powershell
                     sqlite
+                    sops
                     talosctl
                 ];
             };

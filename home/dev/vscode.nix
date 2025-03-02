@@ -27,6 +27,7 @@
         yzhang.markdown-all-in-one
     ] ++ (with inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace; [ #https://github.com/nix-community/nix-vscode-extensions
         juanblanco.solidity
+        signageos.signageos-vscode-sops-beta
     ]));
 
     userSettings = {
@@ -37,5 +38,6 @@
         "update.mode" = "none";
         "terminal.integrated.fontFamily" = "Meslo LG M DZ for Powerline";
         "github.copilot.enable.markdown" = true;
+        "sops.defaults.ageKeyFile" = "/home/tokugero/.age/private.key";
     };
 }

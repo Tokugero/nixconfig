@@ -7,7 +7,6 @@
             pbpaste="xsel --clipboard --output";
             thm-vpn="sudo openvpn --config ~/vpn/thm.ovpn";
             htb-vpn="sudo openvpn --config ~/vpn/htb.ovpn";
-            rebuild="sudo nixos-rebuild switch --flake";
             wrsshlogin="vault login -address=https://vault.wrccdc.org -method=ldap username=Tokugero password=$(cat ~/.credentials/wrccdc)";
             wrssh="vault ssh -address=https://vault.wrccdc.org -mode=ca -role=blackteam";
             wr-vpn="sudo openconnect --protocol=gp  https://gp.wrccdc.org -u Tokugero --passwd-on-stdin <<< $(cat ~/.credentials/wrccdc)";
