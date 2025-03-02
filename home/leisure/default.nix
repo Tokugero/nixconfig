@@ -37,8 +37,12 @@
                 export BW_SESSION=$(bw unlock --raw);
                 echo "Syncing secrets";
                 bw sync;
+                if [ -n "$(type -f syncuniversalsecrets)" ] ; then
+                    syncuniversalsecrets;
+                fi
                 echo "Getting wrccdc password";
-                bw get item wrccdc_dev_.wrccdc | jq -r .notes | base64 -d > ~/.wrccdc;
+                mkdir -p ~/.credentials && touch ~/.credentials/wrccdc;
+                bw get item wrccdc_dev_.wrccdc | jq -r .notes | base64 -d > ~/.credentials/wrccdc;
                 echo "Getting kubeconfig";
                 mkdir -p ~/.kube && touch ~/.kube/config;
                 bw get item kubeconfig_dev_.kubeconfig | jq -r .notes | base64 -d > ~/.kube/config;
