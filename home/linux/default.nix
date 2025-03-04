@@ -41,6 +41,7 @@
     powerManagement.enable = false;
 
     environment.systemPackages = with pkgs; [
+        bpftrace
         brave
         ghostty
         wireguard-go
