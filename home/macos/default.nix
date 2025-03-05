@@ -4,8 +4,6 @@ let
 in
 {
   environment.shellAliases = {
-    # Example:
-    # ll = "ls -l";
     docker = "lima nerdctl";
   };
 
@@ -66,7 +64,6 @@ in
       "aws-iam-authenticator"
       "mas"
       "bitwarden-cli"
-      #"deskflow"
     ];
     casks = [
       "brave-browser"
@@ -75,9 +72,7 @@ in
       "visual-studio-code"
       "discord"
     ];
-    taps = [
-      #"deskflow/homebrew-tap" = inputs.deskflow; # Need to test this
-    ];
+    taps = [];
     masApps = {
       #Example: "xcode" = 497799835;
       "windows app" = 1295203466;
