@@ -61,6 +61,7 @@ in
         useGlobalPkgs = true;
     };
 
+    services.gnome.gnome-remote-desktop.enable = false;
     services.gnome.gnome-browser-connector.enable = true;
     environment.systemPackages = with pkgs; [
         gtop

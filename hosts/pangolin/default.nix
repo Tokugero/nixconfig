@@ -8,6 +8,17 @@
         ./hardware-configuration.nix
     ];
 
+    services.xrdp = {
+        enable = true;
+        defaultWindowManager = "gnome-session";
+
+        extraConfDirCommands = ''
+            substituteInPlace $out/xrdp.ini \
+                --replace 'crypt_level=high' 'crypt_level=low' \
+                --replace '#tcp_send_buffer_bytes=32768' 'tcp_send_buffer_bytes=4194304'
+        '';
+    };
+    
     networking.hostName = "pangolin";
     networking.interfaces.enp2s0.useDHCP = true;
     networking.interfaces.wlo1.useDHCP = true;
