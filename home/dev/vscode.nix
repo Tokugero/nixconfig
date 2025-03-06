@@ -22,6 +22,7 @@
         ms-vscode-remote.remote-containers
         ms-vscode-remote.remote-ssh
         ms-vscode.powershell
+        signageos.signageos-vscode-sops
         redhat.ansible
         redhat.vscode-yaml
         yzhang.markdown-all-in-one
