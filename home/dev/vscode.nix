@@ -28,6 +28,7 @@
         yzhang.markdown-all-in-one
     ] ++ (with inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace; [ #https://github.com/nix-community/nix-vscode-extensions
         juanblanco.solidity
+        bpfdeploy.bpftrace
         signageos.signageos-vscode-sops-beta
     ]));
 
