@@ -30,6 +30,7 @@
     home-manager,
     nix-darwin,
     nix-homebrew,
+    nix-vscode-extensions,
     homebrew-core,
     homebrew-cask,
     unstable,

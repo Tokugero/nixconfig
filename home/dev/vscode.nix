@@ -1,12 +1,11 @@
 { pkgs, config, inputs, system, ... }:
 {
-    enable = config.nixpkgs.hostPlatform.config != "aarch64-apple-darwin";
-    package = pkgs.vscode.fhs;
+    enable = true; #config.nixpkgs.hostPlatform.config != "aarch64-apple-darwin";
+    package = if config.nixpkgs.hostPlatform.config == "aarch64-apple-darwin" then pkgs.vscode else pkgs.vscode-fhs;
     mutableExtensionsDir = false;
 
     extensions = (with pkgs.vscode-extensions; [
         bbenoist.nix
-        devsense.phptools-vscode
         dracula-theme.theme-dracula
         eamodio.gitlens
         esbenp.prettier-vscode
@@ -30,6 +29,7 @@
         juanblanco.solidity
         bpfdeploy.bpftrace
         signageos.signageos-vscode-sops-beta
+        zobo.php-intellisense
     ]));
 
     userSettings = {

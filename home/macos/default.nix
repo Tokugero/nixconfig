@@ -69,7 +69,7 @@ in
       "brave-browser"
       "firefox"
       "ghostty"
-      "visual-studio-code"
+      #"visual-studio-code"
       "discord"
     ];
     taps = [];
