@@ -19,10 +19,6 @@
         '';
     };
     
-    environment.systemPackages = with pkgs; [
-      rocmPackages.clr
-    ];
-
     networking.hostName = "pangolin";
     networking.interfaces.enp2s0.useDHCP = true;
     networking.interfaces.wlo1.useDHCP = true;
