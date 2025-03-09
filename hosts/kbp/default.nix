@@ -14,7 +14,7 @@
     virtualisation.vmware.guest.enable = true;
 
     networking.hosts = {
-      "10.129.135.208" = [ "dog.htb" ];
+      #"10.129.135.208" = [ "dog.htb" ];
     };
 
     boot.loader = {
@@ -28,10 +28,9 @@
     systemd.targets.hybrid-sleep.enable = false;
     
     environment.systemPackages = with pkgs; [
-	open-vm-tools
-	];
+      open-vm-tools
+    ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
     system.stateVersion = "24.11";
 }
