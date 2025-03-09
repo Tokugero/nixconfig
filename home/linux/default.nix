@@ -11,6 +11,9 @@
         users.tokugero = { pkgs, ... }: 
         {
             home = {
+                shellAliases = {
+                    nixclean="sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 1d; sudo nix-collect-garbage -d; sudo nixos-rebuild list-generations;";
+                };
                 packages = with pkgs; [
                     #discord
                     bitwarden-cli

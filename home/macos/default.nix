@@ -5,6 +5,7 @@ in
 {
   environment.shellAliases = {
     docker = "lima nerdctl";
+    nixclean = "sudo nix-collect-garbage -d"; # This is different in nixos where I need to clean boot generations
   };
 
   programs.zsh.interactiveShellInit = ''
