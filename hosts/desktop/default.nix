@@ -8,6 +8,11 @@
         ./hardware-configuration.nix
     ];
 
+    services.hardware.openrgb = {
+      enable = true;
+      motherboard = "amd";
+    };
+
     networking.hostName = "desktop";
 
     networking.hosts = {
