@@ -8,21 +8,22 @@
         {
             home = {
                 packages = with pkgs; [
-                    alejandra
                     age
+                    alejandra
                     awscli2
+                    chruby
                     k9s
                     kubectl
-                    chruby
-                    nil
+                    linkerd
                     ngrok
+                    nil
                     nixfmt-rfc-style
                     nixpkgs-fmt
-                    tenv
                     powershell
-                    sqlite
                     sops
+                    sqlite
                     talosctl
+                    tenv
                 ];
             };
             programs.vscode = import ./vscode.nix { inherit pkgs config inputs system; };
