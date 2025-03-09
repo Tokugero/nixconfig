@@ -14,7 +14,7 @@
     virtualisation.vmware.guest.enable = true;
 
     networking.hosts = {
-      #"10.10.120.90" = [ "frostypines.thm" ];
+      "10.129.135.208" = [ "dog.htb" ];
     };
 
     boot.loader = {
