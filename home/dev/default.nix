@@ -10,6 +10,7 @@
                 packages = with pkgs; [
                     age
                     alejandra
+                    ansible
                     ansible-lint
                     awscli2
                     chruby
