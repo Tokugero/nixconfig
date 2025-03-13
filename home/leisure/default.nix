@@ -10,12 +10,11 @@ in
                 enableNixpkgsReleaseCheck = false;
                 packages = with pkgs; [
                     obs-studio
-                    #synergy
                     bambu-studio
                     hashcat
                     wordlists
-                    deskflow
                     libei
+                    vlc
                 ];
             };
         };
@@ -24,10 +23,6 @@ in
 
     environment.systemPackages = with pkgs; [
         #
-    ];
-
-    nixpkgs.config.permittedInsecurePackages = [
-        "deskflow-1.19.0"
     ];
 
     programs = {

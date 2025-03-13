@@ -19,6 +19,16 @@
       #"10.10.120.90" = [ "frostypines.thm" ];
     };
 
+    environment.systemPackages = with pkgs; [
+      deskflow
+    ];
+
+    nixpkgs.config.permittedInsecurePackages = [
+      "deskflow-1.19.0"
+      "deskflow-1.20.0"
+      "deskflow-1.20.1"
+    ];
+
     boot.loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
