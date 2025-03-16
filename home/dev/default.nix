@@ -14,6 +14,9 @@
                     ansible-lint
                     awscli2
                     chruby
+                    dig
+                    gash-utils
+                    ntp
                     k9s
                     kubectl
                     linkerd
