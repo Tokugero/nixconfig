@@ -15,7 +15,7 @@
                     awscli2
                     chruby
                     dig
-                    gash-utils
+                    #gash-utils
                     ntp
                     k9s
                     kubectl
