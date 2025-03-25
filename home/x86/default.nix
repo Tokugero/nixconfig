@@ -7,7 +7,7 @@
         {
             home = {
                 packages = with pkgs; [
-		            libreoffice-qt6-fresh
+                    libreoffice-qt6-fresh
                     discord
                 ];
             };
@@ -17,4 +17,14 @@
 
     #environment.systemPackages = with pkgs; [
     #];
+    programs.virt-manager.enable = true;
+
+    users.groups.libvirtd.members = ["tokugero"];
+
+    virtualisation.libvirtd = {
+        enable = true;
+        qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+    };
+
+    virtualisation.spiceUSBRedirection.enable = true;
 }
