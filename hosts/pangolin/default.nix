@@ -14,8 +14,8 @@
 
         extraConfDirCommands = ''
             substituteInPlace $out/xrdp.ini \
-                --replace 'crypt_level=high' 'crypt_level=low' \
-                --replace '#tcp_send_buffer_bytes=32768' 'tcp_send_buffer_bytes=4194304'
+            --replace 'crypt_level=high' 'crypt_level=low' \
+            --replace '#tcp_send_buffer_bytes=32768' 'tcp_send_buffer_bytes=4194304'
         '';
     };
     

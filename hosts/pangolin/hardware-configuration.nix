@@ -8,6 +8,14 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  # May need this for ctf challenges including kerberos
+  #networking.timeServers = [
+  #  "haze.htb"
+  #];
+  #services.timesyncd.extraConfig = ''
+  #    RootDistanceMaxSec=30000
+  #'';
+
   services.xserver = {
     dpi = 144;
   };

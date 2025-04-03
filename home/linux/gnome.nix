@@ -70,4 +70,12 @@ in
     environment.sessionVariables = {
         GI_TYPELIB_PATH = "${pkgs.libgtop}/lib/girepository-1.0";
     };
+    services.xserver = {
+        displayManager = {
+            gdm = {
+                enable = true;
+                wayland = true;
+            };
+        };
+    };
 }
