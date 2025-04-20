@@ -18,6 +18,9 @@
                     #gash-utils
                     ntp
                     k9s
+                    helm
+                    istioctl
+                    kubevirt
                     kubectl
                     linkerd
                     ngrok
