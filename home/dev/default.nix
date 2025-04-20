@@ -18,7 +18,7 @@
                     #gash-utils
                     ntp
                     k9s
-                    helm
+                    kubernetes-helm
                     istioctl
                     kubevirt
                     kubectl
