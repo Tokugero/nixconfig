@@ -11,6 +11,7 @@ in
                 packages = with pkgs; [
                     obs-studio
                     bambu-studio
+                    orca-slicer
                     lmstudio
                     hashcat
                     wordlists
