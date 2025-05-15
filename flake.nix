@@ -70,7 +70,7 @@
         system = "x86_64-linux";
         specialArgs = {inherit username inputs system;};
       in
-        nixpkgs.lib.nixosSystem {
+        unstable.lib.nixosSystem {
           inherit specialArgs;
           system = system;
 
