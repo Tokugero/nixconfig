@@ -26,14 +26,17 @@
     networking.hosts = {
       #"10.10.120.90" = [ "frostypines.thm" ];
     };
+    services.ntp.servers = [ "puppy.htb" ];
 
-    boot.loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-
-    boot.kernel = {
-      sysctl."net.core.wmem_max" = 8388608;
+    boot = {
+      loader = {
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+      };
+      kernel = {
+        sysctl."net.core.wmem_max" = 8388608;
+      };
+      supportedFilesystems = [ "nfs" ];
     };
 
     services.logind.lidSwitch = "ignore";
