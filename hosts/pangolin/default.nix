@@ -24,9 +24,11 @@
     networking.interfaces.wlo1.useDHCP = true;
 
     networking.hosts = {
-      #"10.10.120.90" = [ "frostypines.thm" ];
+      #"10.10.120.90" = [ "support.thm" ];
     };
-    services.ntp.servers = [ "puppy.htb" ];
+    #services.ntp.servers = [ "support.htb" ];
+    #networking.timeServers = [ "support.htb" ];
+    #services.ntp.enable = true;
 
     boot = {
       loader = {

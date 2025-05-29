@@ -50,6 +50,7 @@
         wireguard-go
         ntfs3g
         parted
+        outils
         openconnect
     ];
     
