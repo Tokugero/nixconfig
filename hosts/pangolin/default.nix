@@ -23,12 +23,36 @@
     networking.interfaces.enp2s0.useDHCP = true;
     networking.interfaces.wlo1.useDHCP = true;
 
+    # START CHALLENGE CONFIG SECTION
     networking.hosts = {
       #"10.10.120.90" = [ "support.thm" ];
     };
-    #services.ntp.servers = [ "certificate.htb" ];
-    #networking.timeServers = [ "certificate.htb" ];
-    #services.ntp.enable = true;
+    services.ntp.servers = [ "scepter.htb" ];
+    networking.timeServers = [ "scepter.htb" ];
+    services.ntp.enable = true;
+
+    # security.krb5.enable = true;
+# 
+    # security.krb5.settings = {
+    #   realms = {
+    #     "SCEPTER.HTB" = {
+    #       kdc = [ "dc01.scepter.htb" ];
+    #       admin_server = "dc01.scepter.htb";
+    #       default_domain = "dc01.scepter.htb";
+    #     };
+    #   };
+    #   libdefaults = {
+    #     default_realm = "SCEPTER.HTB";
+    #     dns_lookup_realm = true;
+    #     dns_lookup_kdc = true;
+    #   };
+    #   domain_realm = {
+    #     "scepter.htb" = "SCEPTER.HTB";
+    #     ".scepter.htb" = "SCEPTER.HTB";
+    #   };
+    # };
+
+    # END CHALLENGE CONFIG SECTION
 
     boot = {
       loader = {

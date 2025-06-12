@@ -52,6 +52,7 @@
         parted
         outils
         openconnect
+        zip
     ];
     
     virtualisation.docker = {
