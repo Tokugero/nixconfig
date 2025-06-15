@@ -1,8 +1,9 @@
 { pkgs, ...}:
 let
-  nur = import (builtins.fetchTarball { 
-    url = "https://github.com/nix-community/NUR/archive/master.tar.gz"; 
-    }) { inherit pkgs; };
+    nur = import (builtins.fetchTarball { 
+        url = "https://github.com/nix-community/NUR/archive/master.tar.gz"; 
+        }) { inherit pkgs; };
+    flameshot-gui = pkgs.writeShellScriptBin "flameshot-gui" "${pkgs.flameshot}/bin/flameshot gui";
 in
 {
     home-manager = {
@@ -54,6 +55,21 @@ in
                     "org/gnome/desktop/sound" = {
                         event-sounds = false;
                         theme-name = "__custom";
+                    };
+                    # Flameshot configs
+                    # Disable default screenshot interface
+                    "org/gnome/shell/keybindings" = {
+                        show-screenshot-ui = [ ];
+                    };
+                    # Sets the new keybindings
+                    "org/gnome/settings-daemon/plugins/media-keys" = {
+                        custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+                    };
+                    # Defines the new shortcut
+                    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+                        binding = "<Shift><Super>s";
+                        command = "${flameshot-gui}/bin/flameshot-gui";
+                        name = "Flameshot";
                     };
                 };
             };
