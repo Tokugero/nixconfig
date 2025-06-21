@@ -8,6 +8,7 @@
         {
             home = {
                 packages = with pkgs; [
+                    #gash-utils
                     age
                     alejandra
                     ansible
@@ -15,18 +16,18 @@
                     awscli2
                     chruby
                     dig
-                    #gash-utils
-                    ntp
-                    k9s
-                    kubernetes-helm
                     istioctl
-                    kubevirt
+                    jekyll
+                    k9s
                     kubectl
+                    kubernetes-helm
+                    kubevirt
                     linkerd
                     ngrok
                     nil
                     nixfmt-rfc-style
                     nixpkgs-fmt
+                    ntp
                     powershell
                     sops
                     sqlite
@@ -47,6 +48,14 @@
             python312Packages.pip
             python312Packages.pywinrm
             python312Packages.sympy
+            ruby_3_4
+            rubyPackages_3_4.json
+            rubyPackages_3_4.jekyll
+            rubyPackages_3_4.jekyll-feed
+            rubyPackages_3_4.jekyll-remote-theme
+            rubyPackages_3_4.github-pages
+            rubyPackages_3_4.kramdown-parser-gfm
+            rubyPackages_3_4.webrick
         ];
     };
 }
