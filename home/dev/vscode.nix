@@ -41,5 +41,11 @@
         "terminal.integrated.fontFamily" = "Meslo LG M DZ for Powerline";
         "github.copilot.enable.markdown" = true;
         "sops.defaults.ageKeyFile" = "/home/tokugero/.age/private.key";
+        "markdown.copyFiles.destination" = {
+            "**/*" = "\${documentBaseName}_files/\${fileName}"; # This is to line up with jupyter notebook exports
+        };
+        "editor.pasteAs.preferences" = [
+            "markdown.link.image"
+        ];
     };
 }

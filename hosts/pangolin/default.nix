@@ -25,11 +25,11 @@
 
     # START CHALLENGE CONFIG SECTION
     networking.hosts = {
-      #"10.10.120.90" = [ "support.thm" ];
+      #"10.129.89.63" = [ "sorcery.htb" ];
     };
-    services.ntp.servers = [ "scepter.htb" ];
-    networking.timeServers = [ "scepter.htb" ];
-    services.ntp.enable = true;
+    #services.ntp.servers = [ "scepter.htb" ];
+    #networking.timeServers = [ "scepter.htb" ];
+    #services.ntp.enable = true;
 
     # security.krb5.enable = true;
 # 
