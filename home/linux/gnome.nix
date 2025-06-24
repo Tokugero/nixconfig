@@ -86,7 +86,7 @@ in
     environment.sessionVariables = {
         GI_TYPELIB_PATH = "${pkgs.libgtop}/lib/girepository-1.0";
     };
-    services.xserver = {
+    services = {
         displayManager = {
             gdm = {
                 enable = true;

@@ -18,7 +18,7 @@
                     #discord
                     bitwarden-cli
                     remmina
-                    python312Packages.pygments
+                    python313Packages.pygments
                 ];
             };
         };

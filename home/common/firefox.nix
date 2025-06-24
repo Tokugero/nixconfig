@@ -25,7 +25,6 @@ in
             darkreader
             cookie-quick-manager
             privacy-badger
-            tree-style-tab
             ublock-origin
             floccus
             foxyproxy-standard

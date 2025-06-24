@@ -41,10 +41,10 @@
     environment = {
         systemPackages = with pkgs; [
             gcc
-            python312
-            python312Packages.pip
-            python312Packages.pywinrm
-            python312Packages.sympy
+            python313
+            python313Packages.pip
+            python313Packages.pywinrm
+            python313Packages.sympy
             ruby_3_4
             rubyPackages_3_4.json
             rubyPackages_3_4.jekyll
