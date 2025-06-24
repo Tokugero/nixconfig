@@ -9,7 +9,7 @@ in
     home-manager = {
         users.tokugero = { pkgs, ... }: 
         {
-            programs.firefox.profiles."default".extensions = with nur.repos.rycee.firefox-addons; [
+            programs.firefox.profiles."default".extensions.packages = with nur.repos.rycee.firefox-addons; [
                 gnome-shell-integration
             ];
 

@@ -3,19 +3,16 @@ let
     username = "tokugero";
 in
 {
-    
     home-manager = {
         users.${username} = { pkgs, unstable, ... }:
         {  
-            programs = {
-                firefox = import ./firefox.nix { inherit pkgs config; };
-            };
             home = {
                 packages = with pkgs; [
                     flameshot
                     vim
                 ];
             };
+            programs.firefox = import ./firefox.nix { inherit pkgs config; };
         };
     };
 

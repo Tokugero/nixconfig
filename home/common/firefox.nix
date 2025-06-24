@@ -18,7 +18,7 @@ in
             "browser.aboutConfig.showWarning" = false;
             "browser.compactmode.show" = true;
         };
-        extensions = with nur.repos.rycee.firefox-addons; [
+        extensions.packages = with nur.repos.rycee.firefox-addons; [
             bitwarden
             containerise
             kagi-search

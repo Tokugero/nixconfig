@@ -2,7 +2,6 @@
 
 {
     nixpkgs.config.allowUnfree = true;
-
     home-manager = {
         users.tokugero = { pkgs, ... }: 
         {
@@ -38,8 +37,6 @@
             programs.vscode = import ./vscode.nix { inherit pkgs config inputs system; };
         };
     };
-
-    #
 
     environment = {
         systemPackages = with pkgs; [
