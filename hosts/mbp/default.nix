@@ -4,7 +4,7 @@
         (import ../../home/dev/default.nix { inherit config pkgs inputs system; })
     ];
 
-    security.pam.enableSudoTouchIdAuth = true;
+    security.pam.services.sudo_local.touchIdAuth = true;
 
     nix.extraOptions = ''
         experimental-features = nix-command flakes

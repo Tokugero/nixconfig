@@ -105,6 +105,7 @@ in
   system.defaults = {
     dock.autohide = true;
   };
+  system.primaryUser = username;
 
   nixpkgs.config.allowUnfree = true;
 

@@ -1,7 +1,9 @@
 { pkgs, config, inputs, system, ... }:
 {
     enable = true;
-    package = if config.nixpkgs.hostPlatform.config == "aarch64-apple-darwin"
+    # if package in is any of aarch64-apple-darwin or arm64-apple-darwin
+    package = if config.nixpkgs.hostPlatform.config == "aarch64-apple-darwin" ||
+                 config.nixpkgs.hostPlatform.config == "arm64-apple-darwin"
       then pkgs.vscode
       else pkgs.vscode-fhs;
     mutableExtensionsDir = false;
