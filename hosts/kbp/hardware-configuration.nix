@@ -10,7 +10,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
-
+  boot.growPartition = true;
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/6a117c6d-20cd-4a15-ba72-bb27d0924a02";
       fsType = "ext4";

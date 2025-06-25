@@ -7,27 +7,28 @@
         ../../home/pentest/default.nix
         ./hardware-configuration.nix
         ];
+
     nixpkgs.config.allowUnsupportedSystem = true;
     networking.hostName = "kbp";
     networking.interfaces.ens160.useDHCP = true;
 
     virtualisation.vmware.guest.enable = true;
 
-    networking.hosts = {
-      "10.129.167.185" = [ "fluffy.htb" "dc01.fluffy.htb" ];
-    };
-    networking.timeServers = [ "fluffy.htb" ];
-    services.ntp.enable = true;
-    security.krb5.settings = {
-      domain_realm = {
-        "fluffy.htb" = "FLUFFY.HTB";
-      };
-      realms = {
-        "FLUFFY.HTB" = {
-          kdc = [ "fluffy.htb" ];
-        };
-      };
-    };
+    #networking.hosts = {
+    #  "10.129.167.185" = [ "fluffy.htb" "dc01.fluffy.htb" ];
+    #};
+    #networking.timeServers = [ "fluffy.htb" ];
+    #services.ntp.enable = true;
+    #security.krb5.settings = {
+    #  domain_realm = {
+    #    "fluffy.htb" = "FLUFFY.HTB";
+    #  };
+    #  realms = {
+    #    "FLUFFY.HTB" = {
+    #      kdc = [ "fluffy.htb" ];
+    #    };
+    #  };
+    #};
     boot.loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
