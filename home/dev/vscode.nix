@@ -22,7 +22,6 @@
                 ms-azuretools.vscode-docker
                 ms-python.python
                 ms-toolsai.datawrangler
-                ms-toolsai.jupyter
                 ms-vscode-remote.remote-containers
                 ms-vscode-remote.remote-ssh
                 ms-vscode.cpptools-extension-pack
@@ -36,6 +35,7 @@
                 bpfdeploy.bpftrace
                 juanblanco.solidity
                 signageos.signageos-vscode-sops-beta
+                ms-toolsai.jupyter
                 zobo.php-intellisense
             ]);
 
@@ -54,7 +54,7 @@
             "editor.pasteAs.preferences" = [
                 "markdown.link.image"
             ];
-            "extensions.autoUpdate" = false;
+            #"extensions.autoUpdate" = false;
         };
     };
 }

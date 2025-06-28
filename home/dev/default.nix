@@ -17,6 +17,8 @@
                     dig
                     istioctl
                     jekyll
+                    espeak
+                    ffmpeg
                     k9s
                     kubectl
                     kubernetes-helm
@@ -32,6 +34,10 @@
                     sqlite
                     talosctl
                     tenv
+                    python313
+                    python313Packages.pip
+                    python313Packages.pywinrm
+                    python313Packages.sympy
                 ];
             };
             programs.vscode = import ./vscode.nix { inherit pkgs config inputs system; };
@@ -41,10 +47,6 @@
     environment = {
         systemPackages = with pkgs; [
             gcc
-            python313
-            python313Packages.pip
-            python313Packages.pywinrm
-            python313Packages.sympy
             ruby_3_4
             rubyPackages_3_4.json
             rubyPackages_3_4.jekyll
