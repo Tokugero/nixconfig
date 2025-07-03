@@ -24,6 +24,7 @@
     virtualisation.libvirtd = {
         enable = true;
         qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+        allowedBridges = [ "virbr1" "virbr0" ];
     };
 
     virtualisation.spiceUSBRedirection.enable = true;
