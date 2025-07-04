@@ -14,6 +14,7 @@
                     ansible-lint
                     awscli2
                     chruby
+                    cilium-cli
                     dig
                     istioctl
                     jekyll
