@@ -46,6 +46,7 @@
     environment.systemPackages = with pkgs; [
         bpftrace
         brave
+        chromium
         ghostty
         wireguard-go
         ntfs3g
