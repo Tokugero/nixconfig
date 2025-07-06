@@ -27,30 +27,12 @@
     networking.hosts = {
       #"10.129.89.63" = [ "sorcery.htb" ];
     };
-    #services.ntp.servers = [ "scepter.htb" ];
-    #networking.timeServers = [ "scepter.htb" ];
+    # nameservers = rustykey.htb;
+    networking.nameservers = [ "10.129.232.127" "192.168.20.240" ];
+    networking.resolvconf.enable = false;
+    #services.ntp.servers = [ "rustykey.htb" ];
+    networking.timeServers = [ "rustykey.htb" ];
     #services.ntp.enable = true;
-
-    # security.krb5.enable = true;
-# 
-    # security.krb5.settings = {
-    #   realms = {
-    #     "SCEPTER.HTB" = {
-    #       kdc = [ "dc01.scepter.htb" ];
-    #       admin_server = "dc01.scepter.htb";
-    #       default_domain = "dc01.scepter.htb";
-    #     };
-    #   };
-    #   libdefaults = {
-    #     default_realm = "SCEPTER.HTB";
-    #     dns_lookup_realm = true;
-    #     dns_lookup_kdc = true;
-    #   };
-    #   domain_realm = {
-    #     "scepter.htb" = "SCEPTER.HTB";
-    #     ".scepter.htb" = "SCEPTER.HTB";
-    #   };
-    # };
 
     # END CHALLENGE CONFIG SECTION
 
