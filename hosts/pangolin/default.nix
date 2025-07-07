@@ -18,6 +18,13 @@
             --replace '#tcp_send_buffer_bytes=32768' 'tcp_send_buffer_bytes=4194304'
         '';
     };
+
+    environment.systemPackages = with pkgs; [
+      rocmPackages.rocm-smi
+
+    ];
+    services.xserver.videoDrivers = [ "amdgpu" ];
+    hardware.amdgpu.opencl.enable = true;
     
     networking.hostName = "pangolin";
     networking.interfaces.enp2s0.useDHCP = true;
