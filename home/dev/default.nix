@@ -57,12 +57,4 @@
             rubyPackages_3_4.webrick
         ];
     };
-
-    programs.wireshark = {
-        enable = true;
-        dumpcap.enable = true;
-        usbmon.enable = true;
-    };
-
-    users.users.tokugero.extraGroups = [ "wireshark" ];
 }
