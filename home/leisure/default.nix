@@ -17,6 +17,7 @@ in
                     wordlists
                     libei
                     vlc
+                    zoom-us
                 ];
             };
         };
