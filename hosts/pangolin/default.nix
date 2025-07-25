@@ -35,11 +35,12 @@
       #"10.129.89.63" = [ "sorcery.htb" ];
     };
     # nameservers = rustykey.htb;
-    networking.nameservers = [ "10.129.232.127" "192.168.20.240" ];
-    networking.resolvconf.enable = false;
-    #services.ntp.servers = [ "rustykey.htb" ];
-    networking.timeServers = [ "rustykey.htb" ];
-    #services.ntp.enable = true;
+    #networking.nameservers = [ "10.129.232.127" "192.168.20.240" ];
+    # networking.resolvconf.enable = false;
+    services.ntp.servers = [ "mirage.htb" ];
+    networking.timeServers = [ "mirage.htb" ];
+    # time.timeZone = "UTC";
+    services.ntp.enable = true;
 
     # END CHALLENGE CONFIG SECTION
 

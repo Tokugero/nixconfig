@@ -36,7 +36,6 @@
                     tenv
                     python313
                     python313Packages.pip
-                    python313Packages.pywinrm
                     python313Packages.sympy
                 ];
             };
