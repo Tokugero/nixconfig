@@ -34,6 +34,7 @@
             ++ (with inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace; [
                 bpfdeploy.bpftrace
                 juanblanco.solidity
+                raspberry-pi.raspberry-pi-pico
                 signageos.signageos-vscode-sops-beta
                 ms-toolsai.jupyter
                 zobo.php-intellisense

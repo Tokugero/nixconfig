@@ -37,6 +37,8 @@
                     python313
                     python313Packages.pip
                     python313Packages.sympy
+                    screen
+                    usbutils
                 ];
             };
             programs.vscode = import ./vscode.nix { inherit pkgs config inputs system; };

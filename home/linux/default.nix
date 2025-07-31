@@ -82,4 +82,5 @@
             };
         '';
     };
+    services.flatpak.enable = true;
 }
