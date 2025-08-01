@@ -57,6 +57,7 @@ in
       iterm2
       lima
       raycast
+      qemu
     ];
 
   homebrew = {
