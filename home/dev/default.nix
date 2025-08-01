@@ -19,6 +19,7 @@
                     jekyll
                     espeak
                     ffmpeg
+                    inetutils
                     k9s
                     kubectl
                     kubernetes-helm

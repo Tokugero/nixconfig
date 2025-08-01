@@ -82,11 +82,15 @@ in
     environment.systemPackages = with pkgs; [
         gtop
         libgtop
+        gnome-session
     ];
     environment.sessionVariables = {
         GI_TYPELIB_PATH = "${pkgs.libgtop}/lib/girepository-1.0";
     };
     services = {
+        xrdp = {
+            defaultWindowManager = "gnome-session";
+        };
         displayManager = {
             gdm = {
                 enable = true;

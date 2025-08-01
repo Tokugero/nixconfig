@@ -10,7 +10,6 @@
 
     services.xrdp = {
         enable = true;
-        defaultWindowManager = "gnome-session";
 
         extraConfDirCommands = ''
             substituteInPlace $out/xrdp.ini \

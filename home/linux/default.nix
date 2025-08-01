@@ -5,6 +5,7 @@
 
     imports = [
         ./gnome.nix
+        #./plasma.nix
     ];
     
     home-manager = {
