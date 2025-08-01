@@ -98,4 +98,8 @@ in
             };
         };
     };
+    xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-wlr
+    ];
 }

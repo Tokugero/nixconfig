@@ -28,4 +28,8 @@
     };
     #https://github.com/NixOS/nixpkgs/issues/75867
     programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
+    xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-kde
+        xdg-desktop-portal-wlr
+    ];
 }
