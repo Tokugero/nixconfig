@@ -1,3 +1,7 @@
+###
+# If you switch from another DE, make sure to run `dconf reset -f /` and be prepared to reset some QOL settings.
+###
+
 { pkgs, ...}:
 let
     nur = import (builtins.fetchTarball { 
